@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="cv-builder:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cv_builder_jar</output-path>
+    <root id="root">
+      <element id="archive" name="cv-builder.jar">
+        <element id="module-output" name="cv-builder" />
+      </element>
+    </root>
+  </artifact>
+</component>

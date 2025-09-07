@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: com.kimia.builder.ResumeBuilder
+Class-Path: kotlin-stdlib-jdk8-1.8.21.jar cohere-java-1.8.1.jar kotlin-s
+ tdlib-1.8.21.jar jackson-datatype-jdk8-2.17.2.jar okio-3.6.0.jar okio-j
+ vm-3.6.0.jar jackson-annotations-2.17.2.jar spire.doc-13.8.7.jar kotlin
+ -stdlib-common-1.9.10.jar kotlin-stdlib-jdk7-1.8.21.jar jackson-core-2.
+ 17.2.jar annotations-13.0.jar jackson-databind-2.17.2.jar okhttp-4.12.0
+ .jar jackson-datatype-jsr310-2.17.2.jar

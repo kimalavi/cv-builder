@@ -1,0 +1,38 @@
+Using the complete information provided in the next message, generate a **professional, internationally-standard CV** in the **selected language**, tailored to the **specified purpose** and optimized for applications in the **selected target country**.
+
+# Formatting & Structure Requirements:
+1. Format the CV to fit approximately **two pages** in standard print layout. Do **not** mention page numbers, pagination, or page breaks.
+2. Output must be in **Markdown format only**.
+3. Use the following section order:
+   - Personal Information
+   - Education
+   - Research & Publications
+   - Work Experience
+   - Projects
+   - Certificates & Training
+   - Skills
+   - Honors & Awards
+   - References
+4. Insert line breaks followed by **horizontal separators** (`---`) between each section.
+5. Format all section titles as **Header 1** (`# Title`). Add an empty line after every title. Revise titles for clarity and professionalism if needed.
+6. **Hyperlink all email addresses and web pages**, using **descriptive link text** (e.g., `[LinkedIn username](https://...)`, `[Project Website](https://...)`, `[Certificate](https://...)`, `[Publication](https://...)`, `[Email](mailto:example@example.com)`).
+7. **Bold the names of institutions** (e.g., universities, companies) and **italicize the location** (e.g., city, country or branch).
+8. List all entries in **reverse chronological order** (most recent first).
+9. For each academic or professional experience, include **3–4 bullet points** highlighting technical, research, or academic achievements.
+10. Do **not** mention academic leave, withdrawal, or gaps. Instead, emphasize strengths, contributions, and accomplishments.
+11. If contact information for professors, supervisors, or references is available, include their **full name, title, institution, and email address**.
+
+# Language & Style Requirements:
+- Proofread and correct all grammar, spelling, and word choice errors.
+- Refine phrasing and sentence structure for clarity, fluency, and professionalism.
+- Maintain a consistent tone and terminology throughout.
+- Avoid repetition, vague descriptions, or casual language.
+- Use precise, action-oriented language aligned with international CV standards.
+
+# Final Output Instructions:
+- The CV must be clean, modern, and ready for direct submission to universities or employers.
+- Output must be in **Markdown format**, with all formatting rules applied.
+- Do **not** include any commentary, explanation, or introductory text—only the CV content.
+- Use **best-in-class CV examples** as structural reference to ensure formatting and tone meet global standards.
+- If any section lacks data, **omit it entirely** without placeholder text or headers.
+- Do not mention `CV Overview` section at all.

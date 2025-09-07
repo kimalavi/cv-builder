@@ -1,0 +1,104 @@
+Here is the information I have about this person who has requested the resume:
+
+# CV Overview
+
+- Preferred language: (Farsi / English / Deutsch)
+- Target country:
+- Target university or institution (if applicable):
+- Purpose of CV: (Academic migration / Work migration / Both)
+
+---
+
+# Personal Information
+
+- Full name:
+- Date of birth (DD/MM/YYYY):
+- Nationality:
+- Current residence:
+- Contact email:
+- Phone number (with country code):
+- LinkedIn profile URL:
+- GitHub profile URL:
+
+---
+
+# Education Background
+
+For each degree, please fill out:
+
+- Institution name:
+  - Degree obtained (e.g., BSc, MSc, PhD):
+  - Field of study / Major:
+  - Graduation year:
+  - Instruction language (optional):
+  - Relevant coursework:
+  - Academic achievements or honors:
+  - Skills acquired:
+  - Additional notes (e.g., thesis title, exchange programs):
+
+---
+
+# Work Experience
+
+For each position held:
+
+- Job title:
+  - Company/Organization name:
+  - Location:
+  - Start date:
+  - End date (or "Present"):
+  - Key responsibilities:
+  - Achievements or notable projects:
+  - Additional info (e.g., promotions, leadership roles):
+
+---
+
+# Research Experience
+
+For each research project:
+
+- Project title:
+  - Supervisor/Mentor name:
+  - Affiliated institution:
+  - Year conducted:
+  - Summary of research:
+  - Outcomes or findings:
+  - Relevant links (e.g., published papers, portfolios):
+
+---
+
+# Publications
+
+For each publication:
+
+- Title:
+  - Author(s):
+  - Year of publication:
+  - Type (e.g., journal article, conference paper, book chapter):
+  - DOI or link (if available):
+  - Brief summary or abstract:
+
+---
+
+# Recommendations & References
+
+Provide at least two references:
+
+- Referee name:
+  - Position/title:
+  - Organization/institution:
+  - Relationship to you:
+  - Contact information (email and/or phone):
+
+---
+
+# Additional Information
+
+Include any other relevant details:
+
+- Certifications or licenses:
+- Language proficiency:
+- Volunteer work or extracurricular activities:
+- Professional memberships:
+- Awards or recognitions:
+- Personal statement (optional):

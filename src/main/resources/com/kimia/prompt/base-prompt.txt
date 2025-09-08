@@ -28,11 +28,12 @@ Using the complete information provided in the next message, generate a **profes
 - Maintain a consistent tone and terminology throughout.
 - Avoid repetition, vague descriptions, or casual language.
 - Use precise, action-oriented language aligned with international CV standards.
+- If the result is generated in Farsi, convert dates into Jalali calendar dates.
 
 # Final Output Instructions:
 - The CV must be clean, modern, and ready for direct submission to universities or employers.
 - Output must be in **Markdown format**, with all formatting rules applied.
-- Do **not** include any commentary, explanation, or introductory text—only the CV content.
+- Do **not** include any commentary, explanation, or introductory. Do **not** add "```" to the beginning and the end of the text.This is very important.
 - Use **best-in-class CV examples** as structural reference to ensure formatting and tone meet global standards.
 - If any section lacks data, **omit it entirely** without placeholder text or headers.
 - Do not mention `CV Overview` section at all.

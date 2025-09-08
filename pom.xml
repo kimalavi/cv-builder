@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.kimia</groupId>
     <artifactId>cv-builder</artifactId>
-    <version>1.1-alpha</version>
+    <version>1.2-alpha</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -15,21 +15,6 @@
 
     <build>
         <plugins>
-            <!--<plugin>
-                &lt;!&ndash; Build an executable JAR &ndash;&gt;
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.4.2</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.kimia.builder.ResumeBuilder</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -83,7 +68,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>5.2.3</version>
+            <version>5.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.pdfbox</groupId>

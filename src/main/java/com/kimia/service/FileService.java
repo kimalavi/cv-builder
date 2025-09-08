@@ -19,9 +19,9 @@ public class FileService {
     public static String createMarkdown(String fileName, String content) {
         String path = "/generated-CVs/markdown/" + fileName + ".md";
         path = resolveExternalPath(path);
-        System.out.println("Creating markdown file at: " + path);
         deleteIfExists(path);
 
+        System.out.println("Creating markdown file at: " + path);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
             try {
                 Files.createFile(Paths.get(path));
@@ -42,8 +42,8 @@ public class FileService {
     public static void createWordFile(String fileName, String mdPath) {
         String path = "/generated-CVs/word/" + fileName + ".docx";
         path = resolveExternalPath(path);
-        System.out.println("Converting markdown to Word at: " + path);
         deleteIfExists(path);
+        System.out.println("Creating Word document...");
         MarkdownConverter.convert(mdPath, path, FileFormat.Docx);
         System.out.println("Word file created.");
         SpireWatermarkRemover.removeWordWatermark(path);
@@ -52,8 +52,8 @@ public class FileService {
     public static void createPDFFile(String fileName, String mdPath) {
         String path = "/generated-CVs/pdf/" + fileName + ".pdf";
         path = resolveExternalPath(path);
-        System.out.println("Converting markdown to PDF at: " + path);
         deleteIfExists(path);
+        System.out.println("Creating PDF document...");
         MarkdownConverter.convert(mdPath, path, FileFormat.PDF);
         System.out.println("PDF file created.");
 
@@ -63,7 +63,7 @@ public class FileService {
     private static void deleteIfExists(String pathStr) {
         File file = new File(pathStr);
         if (file.exists()) {
-            System.out.println("Cleaning up existing file: " + pathStr);
+            System.out.println("Cleaning up existing file...");
             file.delete();
         }
     }
@@ -74,7 +74,7 @@ public class FileService {
             return Paths.get(jarDir, relativePath).toString();
         } catch (InvalidPathException e) {
             //This is meant for debug mode
-            return Paths.get("D://personal-projects/" + relativePath).toString();
+            return Paths.get("D://personal-projects/cv-builder/" + relativePath).toString();
         }
     }
 

@@ -33,7 +33,7 @@ public class CohereService {
 
     public String generateFileName(String info) {
         return cohere.chat(ChatRequest.builder()
-                .message("What is this person's snake-cased full name in English? Do not include any commentary.")
+                .message("Return the person's full name in English, followed by their preferred language code, all lowercase and separated by hyphens. Do not include any commentary or punctuation.")
                 .chatHistory(List.of(Message.user(ChatMessage.builder().message(info).build())))
                 .build()).getText();
     }

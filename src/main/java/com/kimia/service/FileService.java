@@ -1,7 +1,7 @@
 package com.kimia.service;
 
 import com.kimia.converter.MarkdownConverter;
-import com.kimia.converter.SpireWatermarkRemover;
+import com.kimia.converter.spire.SpireWatermarkRemover;
 import com.spire.doc.FileFormat;
 
 import java.io.*;

@@ -18,9 +18,10 @@ Using the complete information provided in the next message, generate a **profes
 6. **Hyperlink all email addresses and web pages**, using **descriptive link text** (e.g., `[LinkedIn username](https://...)`, `[Project Website](https://...)`, `[Certificate](https://...)`, `[Publication](https://...)`, `[Email](mailto:example@example.com)`).
 7. **Bold the names of institutions** (e.g., universities, companies) and **italicize the location** (e.g., city, country or branch).
 8. List all entries in **reverse chronological order** (most recent first).
-9. For each academic or professional experience, include **3–4 bullet points** highlighting technical, research, or academic achievements.
-10. Do **not** mention academic leave, withdrawal, or gaps. Instead, emphasize strengths, contributions, and accomplishments.
-11. If contact information for professors, supervisors, or references is available, include their **full name, title, institution, and email address**.
+9. In academic resumes for each academic experience include **5 bullet points** all highlighting achievements (elaborate on given data), and for each professional experience include **3 bullet points** all highlighting technical, research, or academic achievements (elaborate on given data).
+10. In work resumes for each academic experience include **3 bullet points** and for each professional experience include **4 bullet points** all highlighting technical, research, or academic achievements (elaborate on given data).
+11. Do **not** mention academic leave, withdrawal, or gaps. Instead, emphasize strengths, contributions, and accomplishments.
+12. If contact information for professors, supervisors, or references is available, include their **full name, title, institution, and email address**.
 
 # Language & Style Requirements:
 - Proofread and correct all grammar, spelling, and word choice errors.
@@ -28,7 +29,8 @@ Using the complete information provided in the next message, generate a **profes
 - Maintain a consistent tone and terminology throughout.
 - Avoid repetition, vague descriptions, or casual language.
 - Use precise, action-oriented language aligned with international CV standards.
-- If the result is generated in Farsi, convert dates into Jalali calendar dates.
+- If the result is generated in Farsi, convert gregorian dates into Jalali calendar dates (Year/Month/Day) and vice versa.
+- Do not put spaces between digits of phone number. Do not put spaces between country code and phone number.
 
 # Final Output Instructions:
 - The CV must be clean, modern, and ready for direct submission to universities or employers.

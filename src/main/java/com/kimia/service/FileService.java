@@ -1,8 +1,15 @@
 package com.kimia.service;
 
+
+
 import com.kimia.converter.MarkdownConverter;
 import com.kimia.converter.spire.SpireWatermarkRemover;
 import com.spire.doc.FileFormat;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -10,6 +17,7 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class FileService {
     public static final String BASE_PROMPT_PATH = "com/kimia/prompt/base-prompt.txt";
@@ -47,6 +55,8 @@ public class FileService {
         MarkdownConverter.convert(mdPath, path, FileFormat.Docx);
         System.out.println("Word file created.");
         SpireWatermarkRemover.removeWordWatermark(path);
+
+        setDocxDirectionRTL(path, path);
     }
 
     public static void createPDFFile(String fileName, String mdPath) {
@@ -54,6 +64,7 @@ public class FileService {
         path = resolveExternalPath(path);
         deleteIfExists(path);
         System.out.println("Creating PDF document...");
+
         MarkdownConverter.convert(mdPath, path, FileFormat.PDF);
         System.out.println("PDF file created.");
 
@@ -88,4 +99,25 @@ public class FileService {
             throw new RuntimeException("Failed to read resource: " + path, e);
         }
     }
+
+    public static void setDocxDirectionRTL(String inputPath, String outputPath) {
+        try (FileInputStream fis = new FileInputStream(inputPath);
+             XWPFDocument document = new XWPFDocument(fis);
+             FileOutputStream fos = new FileOutputStream(outputPath)) {
+
+            for (XWPFParagraph para : document.getParagraphs()) {
+                CTP ctp = para.getCTP();
+                CTPPr pPr = ctp.isSetPPr() ? ctp.getPPr() : ctp.addNewPPr();
+                CTOnOff rtl = pPr.isSetBidi() ? pPr.getBidi() : pPr.addNewBidi();
+                rtl.setVal(true); // Enable RTL
+            }
+
+            document.write(fos);
+            System.out.println("Document direction set to RTL successfully.");
+        } catch (Exception e) {
+            System.err.println("Failed to set RTL direction: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 }

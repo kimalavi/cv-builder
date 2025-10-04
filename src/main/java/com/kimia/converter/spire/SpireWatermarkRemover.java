@@ -49,6 +49,7 @@ public class SpireWatermarkRemover {
                                 Object prev = tempBlock.get(tempBlock.size() - 2);
                                 if (prev instanceof COSArray cosArray) {
                                     for (COSBase cosBase : cosArray) {
+                                        //not checking for "Attention Warning" since the complete phrase is no in a single cosBase
                                         if (cosBase.toString().contains("tion Warning")) {
                                             isWatermarkBlock = true;
                                         }

@@ -30,20 +30,35 @@ public class SpireConverter {
 
             Iterable<Section> sections = document.getSections();
             for (Section section : sections) {
+
                 Iterable<Paragraph> paragraphs = section.getParagraphs();
                 for (Paragraph paragraph : paragraphs) {
                     ParagraphFormat paragraphFormat = paragraph.getFormat();
-                    paragraphFormat.isBidi(true);
+                    //when this is set ot true fully English text is not shown (for example: - DevOps)
+                    String text = paragraph.getText();
+                    if (containsFarsi(text))
+                        paragraphFormat.isBidi(true);
                     Iterable<DocumentObject> childObjects = paragraph.getChildObjects();
                     for (DocumentObject obj : childObjects) {
                         if (obj instanceof TextRange textRange) {
                             CharacterFormat format = textRange.getCharacterFormat();
                             format.setFontName(rtlFont);
-                            format.setBidi(true); // Enable RTL
+                            if (containsFarsi(text))
+                                format.setBidi(true);
                         }
                     }
                 }
             }
         }
     }
+
+    private static boolean containsFarsi(String text) {
+        for (char c : text.toCharArray()) {
+            if (c >= 0x0600 && c <= 0x06FF) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+

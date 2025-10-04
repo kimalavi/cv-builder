@@ -1,40 +1,45 @@
-package com.kimia.service;
+    package com.kimia.service;
 
-import com.cohere.api.Cohere;
-import com.cohere.api.core.CohereException;
-import com.cohere.api.requests.ChatRequest;
-import com.cohere.api.types.ChatMessage;
-import com.cohere.api.types.Message;
-import java.util.List;
 
-public class CohereService {
-    private final Cohere cohere;
+    import com.cohere.api.Cohere;
+    import com.cohere.api.core.CohereException;
+    import com.cohere.api.requests.ChatRequest;
+    import com.cohere.api.types.ChatMessage;
+    import com.cohere.api.types.Message;
 
-    public CohereService() {
-        String clientKey = "JfAyy5xUbUkLaB1D5Rr9a4DPIH7ocanS24nqbb4N";
-        System.out.println("Initializing Cohere client...");
-        this.cohere = Cohere.builder().token(clientKey).clientName("Kimia").build();
-    }
+    import java.util.List;
+    import java.util.UUID;
 
-    public String generateResume(String info, String prompt) {
-        System.out.println("Sending resume generation request to Cohere...");
-        try {
+    public class CohereService {
+        private final Cohere cohere;
+
+        public CohereService() {
+            String clientKey = "VOoUf00Gq1aY64NlaLes8JO4ypnARuBm0JzZoAh5";
+            System.out.println("Initializing Cohere client...");
+            this.cohere = Cohere.builder().token(clientKey).clientName("K").build();
+        }
+
+        public String generateResume(String info, String prompt) {
+            System.out.println("Sending resume generation request to Cohere...");
+            try {
+                return cohere.chat(ChatRequest.builder()
+                        .message(prompt
+                                + "\n"
+                                + "\n"
+                                + "\n"
+                                + "Here is this person's information:"
+                                + info)
+                        .conversationId(UUID.randomUUID().toString())
+                        .build()).getText();
+            } catch (CohereException exception) {
+                throw new CohereException("Failed to connect to cohere servers: Connect you VPN before running this application.");
+            }
+        }
+
+        public String generateFileName(String info) {
             return cohere.chat(ChatRequest.builder()
-                    .message(info)
-                    .chatHistory(List.of(
-                            Message.user(ChatMessage.builder().message("Here is the information I have about this person:").build()),
-                            Message.user(ChatMessage.builder().message(prompt).build())
-                    ))
+                    .message("Return the person's full name in English, followed by their preferred language code, all lowercase and separated by hyphens. Do not include any commentary or punctuation.")
+                    .chatHistory(List.of(Message.user(ChatMessage.builder().message(info).build())))
                     .build()).getText();
-        } catch (CohereException exception) {
-            throw new CohereException("Failed to connect to cohere servers: Connect you VPN before running this application.");
         }
     }
-
-    public String generateFileName(String info) {
-        return cohere.chat(ChatRequest.builder()
-                .message("Return the person's full name in English, followed by their preferred language code, all lowercase and separated by hyphens. Do not include any commentary or punctuation.")
-                .chatHistory(List.of(Message.user(ChatMessage.builder().message(info).build())))
-                .build()).getText();
-    }
-}

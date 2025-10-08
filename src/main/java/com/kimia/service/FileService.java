@@ -1,7 +1,6 @@
 package com.kimia.service;
 
 
-
 import com.kimia.converter.MarkdownConverter;
 import com.kimia.converter.spire.SpireWatermarkRemover;
 import com.spire.doc.FileFormat;
@@ -17,9 +16,9 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class FileService {
+
     public static final String BASE_PROMPT_PATH = "com/kimia/prompt/base-prompt.txt";
     public static final String INFO_EN_PATH = "/info/info-en.txt";
     public static final String INFO_FA_PATH = "/info/info-fa.txt";
@@ -52,6 +51,7 @@ public class FileService {
         path = resolveExternalPath(path);
         deleteIfExists(path);
         System.out.println("Creating Word document...");
+
         MarkdownConverter.convert(mdPath, path, FileFormat.Docx);
         System.out.println("Word file created.");
         SpireWatermarkRemover.removeWordWatermark(path);
